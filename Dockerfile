@@ -1,14 +1,14 @@
-FROM nginx:1.17.0-alpine AS builder
+FROM nginx:1.19.2-alpine AS builder
 
 # nginx:alpine contains NGINX_VERSION environment variable, like so:
-ENV NGINX_VERSION 1.17.0
+ENV NGINX_VERSION 1.19.2
 
 # Our NGINX_COOKIE_FLAG version
 ENV NGINX_COOKIE_FLAG 1.1.0
 
 # Download sources
 RUN wget "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -O nginx.tar.gz && \
-  wget "https://github.com/AirisX/nginx_cookie_flag_module/archive/v${NGINX_COOKIE_FLAG}.tar.gz" -O nginx_cookie_flag.tar.gz
+  wget "https://github.com/tstrg/nginx_cookie_flag_module/archive/v${NGINX_COOKIE_FLAG}.tar.gz" -O nginx_cookie_flag.tar.gz
 
 # For latest build deps, see https://github.com/nginxinc/docker-nginx/blob/master/mainline/alpine/Dockerfile
 RUN apk add --no-cache --virtual .build-deps \
