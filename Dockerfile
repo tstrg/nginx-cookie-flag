@@ -4,7 +4,7 @@ FROM nginx:1.19.2-alpine AS builder
 ENV NGINX_VERSION 1.19.2
 
 # Our NGINX_COOKIE_FLAG version
-ENV NGINX_COOKIE_FLAG 1.1.0
+ENV NGINX_COOKIE_FLAG 1.1.0-samesite-none
 
 # Download sources
 RUN wget "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -O nginx.tar.gz && \
