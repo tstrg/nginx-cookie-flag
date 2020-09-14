@@ -8,7 +8,7 @@ ENV NGINX_COOKIE_FLAG 1.1.0-samesite-none
 
 # Download sources
 RUN wget "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -O nginx.tar.gz && \
-  wget "https://github.com/tstrg/nginx_cookie_flag_module/archive/v${NGINX_COOKIE_FLAG}.tar.gz" -O nginx_cookie_flag.tar.gz
+  wget "https://github.com/tstrg/nginx_cookie_flag_module/archive/${NGINX_COOKIE_FLAG}.tar.gz" -O nginx_cookie_flag.tar.gz
 
 # For latest build deps, see https://github.com/nginxinc/docker-nginx/blob/master/mainline/alpine/Dockerfile
 RUN apk add --no-cache --virtual .build-deps \
